@@ -924,6 +924,50 @@ body {
     opacity: 1;
     transform: none; /* Disable section animations on mobile for better performance */
   }
+
+  /* Disable fixed background attachments on mobile for better performance */
+  .services,
+  .portfolio,
+  .testimonials,
+  .about,
+  .team,
+  .why-us,
+  .contact {
+    background-attachment: scroll !important;
+  }
+
+  .services::before,
+  .portfolio::before,
+  .testimonials::before,
+  .about::before,
+  .team::before,
+  .why-us::before,
+  .contact::before {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Performance optimizations for background images */
+@media (prefers-reduced-motion: reduce) {
+  .services,
+  .portfolio,
+  .testimonials,
+  .about,
+  .team,
+  .why-us,
+  .contact {
+    background-attachment: scroll !important;
+  }
+
+  .services::before,
+  .portfolio::before,
+  .testimonials::before,
+  .about::before,
+  .team::before,
+  .why-us::before,
+  .contact::before {
+    background-attachment: scroll !important;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1257,6 +1301,36 @@ section,
   }
 }
 
+/* About Section Background Images */
+.about {
+  position: relative;
+  background-image:
+    linear-gradient(135deg, rgba(82, 119, 233, 0.04) 0%, rgba(82, 119, 233, 0.02) 100%),
+    radial-gradient(circle at 25% 75%, rgba(82, 119, 233, 0.06) 0%, transparent 45%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../img/about/about-9.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.about .container {
+  position: relative;
+  z-index: 1;
+}
+
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -1407,6 +1481,37 @@ section,
   height: 90%;
   background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
   border-radius: 12px;
+  z-index: 1;
+}
+
+/* Service Background Images */
+.services {
+  position: relative;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(82, 119, 233, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(82, 119, 233, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(82, 119, 233, 0.05) 0%, rgba(82, 119, 233, 0.02) 100%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../img/services/services-3.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.services .container {
+  position: relative;
   z-index: 1;
 }
 
@@ -1601,6 +1706,35 @@ section,
   .services p {
     font-size: 14px;
   }
+}
+
+/* Portfolio Background Images */
+.portfolio {
+  position: relative;
+  background-image:
+    linear-gradient(135deg, rgba(82, 119, 233, 0.03) 0%, rgba(82, 119, 233, 0.01) 100%),
+    radial-gradient(circle at 30% 70%, rgba(82, 119, 233, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 70% 30%, rgba(82, 119, 233, 0.06) 0%, transparent 40%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.portfolio::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="digital-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="transparent"/><circle cx="10" cy="10" r="1" fill="rgba(82, 119, 233, 0.1)"/><path d="M5 5 L15 5 L15 15 L5 15 Z" fill="none" stroke="rgba(82, 119, 233, 0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23digital-pattern)"/></svg>');
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.portfolio .container {
+  position: relative;
+  z-index: 1;
 }
 
 /*--------------------------------------------------------------
@@ -1992,12 +2126,36 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
-/*--------------------------------------------------------------
-# Why Us Section
---------------------------------------------------------------*/
+/* Why Us Section Background Images */
 .why-us {
+  position: relative;
   padding-top: 60px;
   padding-bottom: 60px;
+  background-image:
+    linear-gradient(135deg, rgba(82, 119, 233, 0.05) 0%, rgba(82, 119, 233, 0.03) 100%),
+    radial-gradient(circle at 35% 65%, rgba(82, 119, 233, 0.08) 0%, transparent 45%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.why-us::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../img/illustration/illustration-14.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.04;
+  z-index: 0;
+}
+
+.why-us .container {
+  position: relative;
+  z-index: 1;
 }
 
 .why-us .feature-card {
@@ -2225,6 +2383,34 @@ section,
     width: 100%;
     justify-content: center;
   }
+}
+
+/* Testimonials Background Images */
+.testimonials {
+  position: relative;
+  background-image:
+    linear-gradient(135deg, rgba(82, 119, 233, 0.02) 0%, rgba(82, 119, 233, 0.05) 100%),
+    radial-gradient(circle at 50% 50%, rgba(82, 119, 233, 0.08) 0%, transparent 50%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.testimonials::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="testimonial-pattern" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="2" fill="rgba(82, 119, 233, 0.1)"/><path d="M5 5 L25 5 M5 15 L25 15 M5 25 L25 25" stroke="rgba(82, 119, 233, 0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23testimonial-pattern)"/></svg>');
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.testimonials .container {
+  position: relative;
+  z-index: 1;
 }
 
 /*--------------------------------------------------------------
@@ -2456,6 +2642,35 @@ section,
     padding: 6px 10px;
     border-radius: 10px;
   }
+}
+
+/* Team Section Background Images */
+.team {
+  position: relative;
+  background-image:
+    linear-gradient(135deg, rgba(82, 119, 233, 0.03) 0%, rgba(82, 119, 233, 0.06) 100%),
+    radial-gradient(circle at 40% 60%, rgba(82, 119, 233, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 60% 40%, rgba(82, 119, 233, 0.05) 0%, transparent 40%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.team::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="team-pattern" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="1.5" fill="rgba(82, 119, 233, 0.1)"/><path d="M5 5 L20 5 M5 12.5 L20 12.5 M5 20 L20 20" stroke="rgba(82, 119, 233, 0.05)" stroke-width="0.5"/><path d="M5 5 L5 20 M12.5 5 L12.5 20 M20 5 L20 20" stroke="rgba(82, 119, 233, 0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23team-pattern)"/></svg>');
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.team .container {
+  position: relative;
+  z-index: 1;
 }
 
 /*--------------------------------------------------------------
@@ -2883,11 +3098,28 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
+/* Contact Section Background Images */
 .contact {
+  position: relative;
   background: linear-gradient(135deg, var(--background-color), color-mix(in srgb, var(--accent-color), transparent 97%));
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="contact-pattern" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="rgba(82, 119, 233, 0.1)"/><path d="M10 10 L30 10 M10 20 L30 20 M10 30 L30 30" stroke="rgba(82, 119, 233, 0.05)" stroke-width="0.5"/><path d="M10 10 L10 30 M20 10 L20 30 M30 10 L30 30" stroke="rgba(82, 119, 233, 0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23contact-pattern)"/></svg>');
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.contact .container {
+  position: relative;
+  z-index: 1;
 }
 
 .contact .contact-form-card {
