@@ -204,8 +204,26 @@ h6 {
 .header .logo h1 {
   font-size: 24px;
   margin: 0;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--heading-color);
+  letter-spacing: -0.02em;
+}
+
+.header .company-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 8px;
+}
+
+.header .company-tagline {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+  opacity: 0.9;
 }
 
 .header .btn-getstarted,
@@ -238,6 +256,14 @@ h6 {
 
   .header .logo {
     order: 1;
+  }
+
+  .header .logo h1 {
+    font-size: 20px;
+  }
+
+  .header .company-tagline {
+    font-size: 9px;
   }
 
   .header .btn-getstarted {
