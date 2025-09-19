@@ -160,24 +160,34 @@
 
     links.forEach(link => {
       link.addEventListener('click', function(e) {
-        e.preventDefault();
+        const href = this.getAttribute('href');
 
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+        // Special handling for "Our Work" button
+        if (this.textContent.includes('Our Work') || href === '#portfolio') {
+          e.preventDefault();
+          scrollToPortfolio();
+          return;
+        }
 
-        if (targetElement) {
-          const offsetTop = targetElement.offsetTop - 100; // Offset for header
+        // Default smooth scroll for other links
+        if (href && href !== '#') {
+          e.preventDefault();
 
-          window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
+          const targetElement = document.querySelector(href);
+          if (targetElement) {
+            const offsetTop = targetElement.offsetTop - 100; // Offset for header
 
-          // Add visual feedback
-          this.style.transform = 'scale(0.95)';
-          setTimeout(() => {
-            this.style.transform = 'scale(1)';
-          }, 150);
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+
+            // Add visual feedback
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              this.style.transform = 'scale(1)';
+            }, 150);
+          }
         }
       });
     });
@@ -325,6 +335,27 @@
   window.addEventListener('load', aosInit);
 
   /**
+   * Smooth scroll to portfolio section
+   */
+  function scrollToPortfolio() {
+    const portfolioSection = document.getElementById('portfolio');
+    if (portfolioSection) {
+      const offsetTop = portfolioSection.offsetTop - 100; // Offset for header
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+
+      // Add visual feedback with a subtle animation
+      portfolioSection.style.transform = 'scale(1.01)';
+      setTimeout(() => {
+        portfolioSection.style.transform = 'scale(1)';
+      }, 300);
+    }
+  }
+
+  /**
    * Hero Image Carousel Functionality
    */
   function initHeroCarousel() {
@@ -397,6 +428,17 @@
         stopAutoPlay();
         startAutoPlay(); // Restart auto-play after manual navigation
       });
+    });
+
+    // Event listeners for carousel images - link to portfolio section
+    slides.forEach((slide, index) => {
+      const image = slide.querySelector('img');
+      if (image) {
+        image.addEventListener('click', () => {
+          scrollToPortfolio();
+        });
+        image.style.cursor = 'pointer';
+      }
     });
 
     // Pause auto-play on hover
