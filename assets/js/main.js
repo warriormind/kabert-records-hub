@@ -23,6 +23,225 @@
   window.addEventListener('load', toggleScrolled);
 
   /**
+   * Interactive Elements - Mouse Follower and Parallax Effects
+   */
+  function initInteractiveElements() {
+    // Mouse follower element
+    const mouseFollower = document.createElement('div');
+    mouseFollower.className = 'mouse-follower';
+    mouseFollower.innerHTML = '<div class="mouse-follower-inner"></div>';
+    document.body.appendChild(mouseFollower);
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let followerX = 0;
+    let followerY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function updateMouseFollower() {
+      const speed = 0.15;
+      followerX += (mouseX - followerX) * speed;
+      followerY += (mouseY - followerY) * speed;
+
+      mouseFollower.style.transform = `translate(${followerX - 25}px, ${followerY - 25}px)`;
+      requestAnimationFrame(updateMouseFollower);
+    }
+    updateMouseFollower();
+
+    // Interactive hover effects for service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+      card.addEventListener('mouseenter', (e) => {
+        const rect = card.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+
+        mouseFollower.classList.add('active');
+        card.style.transform = `perspective(1000px) rotateY(${angle * 0.1}deg) rotateX(${(e.clientY - centerY) * 0.01}deg) scale(1.05)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        mouseFollower.classList.remove('active');
+        card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)';
+      });
+    });
+
+    // Parallax effect for hero section
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+      document.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        heroSection.style.transform = `translateY(${rate}px)`;
+      });
+    }
+
+    // Dynamic background gradient based on scroll
+    const body = document.body;
+    document.addEventListener('scroll', () => {
+      const scrollPercent = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      const hue = 220 + (scrollPercent * 0.5); // Blue to purple gradient
+      body.style.background = `linear-gradient(135deg, hsl(${hue}, 70%, 15%) 0%, hsl(${hue + 20}, 60%, 8%) 100%)`;
+    });
+  }
+
+  /**
+   * Enhanced Portfolio Filtering with Animations
+   */
+  function initEnhancedPortfolio() {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const filterButtons = document.querySelectorAll('.portfolio-filters li');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filterValue = this.getAttribute('data-filter');
+
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+        this.classList.add('filter-active');
+
+        // Filter portfolio items with animation
+        portfolioItems.forEach((item, index) => {
+          const shouldShow = filterValue === '*' || item.classList.contains(filterValue.substring(1));
+
+          if (shouldShow) {
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1) translateY(0)';
+              item.style.display = 'block';
+            }, index * 100);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.8) translateY(20px)';
+            setTimeout(() => {
+              item.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+  }
+
+  /**
+   * Interactive Testimonial Carousel
+   */
+  function initInteractiveTestimonials() {
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+    testimonialCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px) scale(1.02)';
+        card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.3)';
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+        card.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
+      });
+
+      // Add click interaction for testimonials
+      card.addEventListener('click', () => {
+        testimonialCards.forEach(c => c.classList.remove('testimonial-active'));
+        card.classList.add('testimonial-active');
+      });
+    });
+  }
+
+  /**
+   * Smooth Scroll with Offset for Interactive Elements
+   */
+  function initSmoothScroll() {
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop - 100; // Offset for header
+
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+
+          // Add visual feedback
+          this.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            this.style.transform = 'scale(1)';
+          }, 150);
+        }
+      });
+    });
+  }
+
+  /**
+   * Dynamic Loading Animation for Sections
+   */
+  function initSectionAnimations() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('section-visible');
+
+          // Add staggered animation for child elements
+          const children = entry.target.querySelectorAll('.animate-child');
+          children.forEach((child, index) => {
+            setTimeout(() => {
+              child.classList.add('child-visible');
+            }, index * 100);
+          });
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  }
+
+  /**
+   * Interactive Service Cards with 3D Effects
+   */
+  function initServiceCards() {
+    const serviceCards = document.querySelectorAll('.service-card');
+
+    serviceCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+      });
+    });
+  }
+
+  /**
    * Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
@@ -96,13 +315,29 @@
    */
   function aosInit() {
     AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
+      duration: 800,
+      easing: 'ease-out-cubic',
       once: true,
-      mirror: false
+      mirror: false,
+      offset: 100
     });
   }
   window.addEventListener('load', aosInit);
+
+  /**
+   * Initialize all interactive features
+   */
+  function initAllInteractiveFeatures() {
+    initInteractiveElements();
+    initEnhancedPortfolio();
+    initInteractiveTestimonials();
+    initSmoothScroll();
+    initSectionAnimations();
+    initServiceCards();
+  }
+
+  // Initialize all features when DOM is loaded
+  document.addEventListener('DOMContentLoaded', initAllInteractiveFeatures);
 
   /**
    * Initiate Pure Counter
