@@ -1,8 +1,8 @@
 <template>
   <section id="why-us" class="why-us section animate-child">
     <div class="container section-title" data-aos="fade-up">
-      <h2>Why Us</h2>
-      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      <h2>Why Choose Kabert Records Hub</h2>
+      <p>Leading the digital transformation of administrative and business processes across Africa</p>
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -37,8 +37,8 @@
 
         <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
           <div class="feature-content">
-            <h3>Why Leading Brands Choose Us</h3>
-            <p class="lead">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <h3>Market Leadership in African Digital Transformation</h3>
+            <p class="lead">The demand for administrative and digital services is growing rapidly across Africa due to increasing compliance requirements, data security needs, and the transition to paperless operations.</p>
 
             <div class="feature-list">
               <div v-for="item in featureList" :key="item.title" class="feature-item">
@@ -70,39 +70,39 @@ export default {
     return {
       features: [
         {
-          icon: 'bi bi-palette-fill',
-          title: 'Creative Excellence',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.',
-          stat: '95',
-          label: '% Client Satisfaction'
+          icon: 'bi bi-shield-check',
+          title: 'Uncompromising Security',
+          description: 'We maintain the highest standards of confidentiality and data protection, ensuring your sensitive information remains secure throughout our service delivery.',
+          stat: '100',
+          label: '% Data Security'
         },
         {
-          icon: 'bi bi-graph-up-arrow',
-          title: 'Proven Results',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit.',
-          stat: '200',
-          label: '% ROI Increase'
+          icon: 'bi bi-gear-wide-connected',
+          title: 'Integrated Solutions',
+          description: 'Our unique combination of traditional administrative expertise and cutting-edge digital technology provides comprehensive, end-to-end business solutions.',
+          stat: '150',
+          label: '+ Projects Delivered'
         },
         {
-          icon: 'bi bi-award-fill',
-          title: 'Expert Team',
-          description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis unde omnis.',
-          stat: '50',
-          label: '+ Awards Won'
+          icon: 'bi bi-lightning-charge',
+          title: 'Agile & Adaptable',
+          description: 'We deliver services with speed and flexibility, adapting to local market conditions and client requirements across diverse African contexts.',
+          stat: '24',
+          label: 'Hour Response Time'
         }
       ],
       featureList: [
         {
-          title: 'Strategic Thinking',
-          description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.'
+          title: 'Serving Diverse African Markets',
+          description: 'Government departments, NGOs, private sector companies, educational institutions, and healthcare organizations trust us with their most critical administrative and digital transformation needs.'
         },
         {
-          title: 'Data-Driven Approach',
-          description: 'Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.'
+          title: 'Meeting Growing Compliance Demands',
+          description: 'Legal and donor compliance requirements, increased data security needs, and the transition to paperless operations drive the demand for our integrated services across Africa.'
         },
         {
-          title: '24/7 Support',
-          description: 'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit.'
+          title: 'Affordable SME Solutions',
+          description: 'We offer subscription-based digital admin services and affordable service plans tailored for small and medium enterprises, faith-based organizations, and schools.'
         }
       ]
     }

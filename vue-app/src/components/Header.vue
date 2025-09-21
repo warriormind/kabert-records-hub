@@ -16,22 +16,24 @@
           <li><a href="#portfolio" :class="{ active: activeSection === 'portfolio' }" @click="scrollToSection('portfolio')">Portfolio</a></li>
           <li><a href="#team" :class="{ active: activeSection === 'team' }" @click="scrollToSection('team')">Team</a></li>
           <li class="dropdown">
-            <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <a href="#"><span>Industries</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
+              <li><a href="#services" @click="scrollToSection('services')">Government & Public Sector</a></li>
+              <li><a href="#services" @click="scrollToSection('services')">NGOs & Donor Organizations</a></li>
+              <li><a href="#services" @click="scrollToSection('services')">Private Sector & SMEs</a></li>
               <li class="dropdown">
-                <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <a href="#"><span>Educational Institutions</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
+                  <li><a href="#services" @click="scrollToSection('services')">Universities</a></li>
+                  <li><a href="#services" @click="scrollToSection('services')">Colleges & Schools</a></li>
+                  <li><a href="#services" @click="scrollToSection('services')">Research Institutions</a></li>
+                  <li><a href="#services" @click="scrollToSection('services')">Training Centers</a></li>
+                  <li><a href="#services" @click="scrollToSection('services')">Libraries</a></li>
                 </ul>
               </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="#services" @click="scrollToSection('services')">Healthcare Organizations</a></li>
+              <li><a href="#services" @click="scrollToSection('services')">Financial Services</a></li>
+              <li><a href="#services" @click="scrollToSection('services')">Mining & Resources</a></li>
             </ul>
           </li>
           <li><a href="#contact" :class="{ active: activeSection === 'contact' }" @click="scrollToSection('contact')">Contact</a></li>

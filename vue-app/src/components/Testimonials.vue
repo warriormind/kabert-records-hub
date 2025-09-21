@@ -1,8 +1,8 @@
 <template>
   <section id="testimonials" class="testimonials section animate-child">
     <div class="container section-title" data-aos="fade-up">
-      <h2>Testimonials</h2>
-      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      <h2>Client Testimonials</h2>
+      <p>Trusted by organizations across Africa for exceptional administrative and digital transformation services</p>
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -85,39 +85,39 @@ export default {
     return {
       testimonials: [
         {
-          name: 'Jennifer Martinez',
-          role: 'Product Designer',
+          name: 'Dr. Mary Banda',
+          role: 'Director of Administration',
           avatar: '/assets/img/person/person-f-12.webp',
-          content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit.',
-          company: 'TechCorp'
+          content: 'Kabert Records Hub transformed our document management system completely. Their digitization services helped us comply with donor requirements while maintaining the highest standards of confidentiality. The team\'s expertise in both traditional records management and modern technology is unmatched.',
+          company: 'Zambia Health Ministry'
         },
         {
-          name: 'Alexander Chen',
-          role: 'Frontend Engineer',
+          name: 'James Mulenga',
+          role: 'Executive Director',
           avatar: '/assets/img/person/person-m-11.webp',
-          content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
-          company: 'InnovateLab'
+          content: 'The custom HR management system developed by Kabert Records Hub has streamlined our operations significantly. From payroll processing to employee records management, their solution is both powerful and user-friendly. Their ongoing support and local expertise make them the perfect technology partner for NGOs.',
+          company: 'CARE Zambia'
         },
         {
-          name: 'Rachel Taylor',
-          role: 'Marketing Lead',
+          name: 'Patricia Zulu',
+          role: 'Operations Manager',
           avatar: '/assets/img/person/person-f-8.webp',
-          content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.',
-          company: 'GrowthCo'
+          content: 'We needed a comprehensive IT infrastructure setup for our expanding operations. Kabert Records Hub delivered beyond our expectations - from LAN configuration to security protocols. Their agile approach and understanding of the Zambian business environment made the entire process smooth and efficient.',
+          company: 'Zambia Breweries'
         },
         {
-          name: 'Christopher Lee',
-          role: 'VP Engineering',
+          name: 'Dr. Simon Chileshe',
+          role: 'Deputy Director',
           avatar: '/assets/img/person/person-m-14.webp',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam.',
-          company: 'DevStream'
+          content: 'The administrative workflow redesign implemented by Kabert Records Hub has improved our efficiency by 40%. Their secretariat services and minute-taking expertise, combined with modern digital tools, have transformed how we manage our organizational records and meetings.',
+          company: 'University of Zambia'
         },
         {
-          name: 'Amanda Rodriguez',
-          role: 'UX Researcher',
+          name: 'Grace Mwanza',
+          role: 'Finance Director',
           avatar: '/assets/img/person/person-f-5.webp',
-          content: 'Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse.',
-          company: 'UserFirst'
+          content: 'As a growing SME, we needed affordable yet professional accounting software. Kabert Records Hub delivered a custom solution that perfectly fits our needs. Their subscription-based model makes advanced technology accessible to businesses like ours. Exceptional service and support.',
+          company: 'Zambeef Products'
         }
       ]
     }
