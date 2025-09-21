@@ -1,23 +1,44 @@
 <template>
   <div id="app">
-    <Header />
-    <main class="main">
-      <Hero />
-      <About />
-      <Services />
-      <Partners />
-      <Portfolio />
-      <WhyUs />
-      <Testimonials />
-      <Team />
-      <Contact />
-    </main>
-    <Footer />
-    <ScrollTop />
+    <ErrorBoundary>
+      <Header />
+      <main class="main">
+        <ErrorBoundary>
+          <Hero />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <About />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Services />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Partners />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Portfolio />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <WhyUs />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Testimonials />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Team />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Contact />
+        </ErrorBoundary>
+      </main>
+      <Footer />
+      <ScrollTop />
+    </ErrorBoundary>
   </div>
 </template>
 
 <script>
+import ErrorBoundary from './components/ErrorBoundary.vue'
 import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
 import About from './components/About.vue'
@@ -34,6 +55,7 @@ import ScrollTop from './components/ScrollTop.vue'
 export default {
   name: 'App',
   components: {
+    ErrorBoundary,
     Header,
     Hero,
     About,
