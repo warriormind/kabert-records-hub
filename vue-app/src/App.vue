@@ -49,37 +49,3 @@ export default {
   }
 }
 </script>
-
-<style>
-/* Global styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-  color: #333;
-}
-
-.main {
-  overflow-x: hidden;
-}
-
-.section {
-  padding: 80px 0;
-}
-
-.animate-child {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-
-.animate-child.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>

@@ -2,11 +2,9 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
       <a href="#hero" class="logo d-flex align-items-center me-auto me-xl-0" @click="scrollToSection('hero')">
-        <img src="/assets/img/logo.jpg" alt="Kabert Records Hub Logo" @error="handleImageError">
-        <div class="company-info">
-          <h1 class="sitename">Kabert Records Hub</h1>
-          <span class="company-tagline">Business Solutions Provider</span>
-        </div>
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <h1 class="sitename">Kabert Records Hub</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -99,102 +97,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-/* Header styles */
-.header {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.logo {
-  text-decoration: none;
-  color: #333;
-}
-
-.logo img {
-  height: 40px;
-  margin-right: 10px;
-}
-
-.sitename {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-  color: #2c3e50;
-}
-
-.company-tagline {
-  font-size: 0.8rem;
-  color: #7f8c8d;
-  display: block;
-}
-
-.navmenu ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.navmenu a {
-  color: #333;
-  text-decoration: none;
-  padding: 10px 15px;
-  display: block;
-  transition: color 0.3s;
-}
-
-.navmenu a.active,
-.navmenu a:hover {
-  color: #007bff;
-}
-
-.btn-getstarted {
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-.btn-getstarted:hover {
-  transform: translateY(-2px);
-  color: white;
-}
-
-/* Mobile nav */
-.mobile-nav-toggle {
-  display: none;
-  cursor: pointer;
-}
-
-@media (max-width: 1200px) {
-  .mobile-nav-toggle {
-    display: block;
-  }
-
-  .navmenu {
-    position: fixed;
-    top: 70px;
-    right: -100%;
-    width: 300px;
-    height: calc(100vh - 70px);
-    background: white;
-    transition: right 0.3s ease;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-  }
-
-  .navmenu.mobile-nav-active {
-    right: 0;
-  }
-
-  .navmenu ul {
-    flex-direction: column;
-    padding: 20px;
-  }
-}
-</style>

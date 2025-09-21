@@ -1,8 +1,8 @@
 <template>
   <section id="why-us" class="why-us section animate-child">
     <div class="container section-title" data-aos="fade-up">
-      <h2>Why Choose Kabert</h2>
-      <p>Leading the transition to smarter, secure, and more efficient information management solutions across Africa</p>
+      <h2>Why Us</h2>
+      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -21,7 +21,7 @@
             <h4>{{ feature.title }}</h4>
             <p>{{ feature.description }}</p>
             <div class="feature-stats">
-              <span class="stat-number" :ref="`stat-${index}`">{{ feature.stat }}</span>
+              <span class="stat-number" data-purecounter-start="0" data-purecounter-end="{{ feature.stat }}" data-purecounter-duration="2">{{ feature.stat }}</span>
               <span class="stat-label">{{ feature.label }}</span>
             </div>
           </div>
@@ -70,25 +70,25 @@ export default {
     return {
       features: [
         {
-          icon: 'bi bi-shield-lock-fill',
-          title: 'Confidentiality & Security',
-          description: 'We strictly protect sensitive data with high standards of confidentiality and security, ensuring compliance with legal and industry regulations.',
-          stat: '100',
-          label: '% Data Security'
+          icon: 'bi bi-palette-fill',
+          title: 'Creative Excellence',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.',
+          stat: '95',
+          label: '% Client Satisfaction'
         },
         {
-          icon: 'bi bi-gear-wide-connected',
-          title: 'Integrated Solutions',
-          description: 'Unique combination of administrative support with advanced digital technology, providing comprehensive solutions for modern organizations.',
-          stat: '500',
-          label: '+ Organizations Served'
+          icon: 'bi bi-graph-up-arrow',
+          title: 'Proven Results',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit.',
+          stat: '200',
+          label: '% ROI Increase'
         },
         {
-          icon: 'bi bi-globe-africa',
-          title: 'Local Expertise',
-          description: 'Deep understanding of African markets with agile delivery and local adaptability, serving government, NGOs, and private sector clients.',
-          stat: '4',
-          label: 'Countries Served'
+          icon: 'bi bi-award-fill',
+          title: 'Expert Team',
+          description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis unde omnis.',
+          stat: '50',
+          label: '+ Awards Won'
         }
       ],
       featureList: [
@@ -107,39 +107,12 @@ export default {
       ]
     }
   },
-  mounted() {
-    this.animateStats()
-  },
   methods: {
     scrollToSection(sectionId) {
       const element = document.getElementById(sectionId)
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' })
       }
-    },
-    animateStats() {
-      this.$nextTick(() => {
-        this.features.forEach((feature, index) => {
-          this.animateNumber(feature.stat, `stat-${index}`)
-        })
-      })
-    },
-    animateNumber(target, ref) {
-      if (typeof target !== 'number' || !ref) return
-
-      let current = 0
-      const increment = target / 50
-      const timer = setInterval(() => {
-        current += increment
-        if (current >= target) {
-          current = target
-          clearInterval(timer)
-        }
-        const element = this.$refs[ref]
-        if (element && element.length > 0) {
-          element[0].textContent = Math.floor(current)
-        }
-      }, 50)
     },
     handleImageError(event) {
       console.warn('Image failed to load:', event.target.src)
@@ -148,152 +121,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.why-us {
-  background: #f8f9fa;
-}
-
-.feature-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  height: 100%;
-  transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-10px);
-}
-
-.icon-wrapper {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  color: white;
-  font-size: 2rem;
-}
-
-.feature-card h4 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #2c3e50;
-}
-
-.feature-card p {
-  color: #6c757d;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.feature-stats {
-  margin-top: auto;
-}
-
-.stat-number {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #007bff;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: #6c757d;
-}
-
-.feature-showcase img {
-  border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.feature-content h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #2c3e50;
-}
-
-.lead {
-  font-size: 1.1rem;
-  color: #6c757d;
-  margin-bottom: 2rem;
-}
-
-.feature-list {
-  margin-bottom: 2rem;
-}
-
-.feature-item {
-  display: flex;
-  margin-bottom: 1.5rem;
-}
-
-.feature-icon {
-  color: #28a745;
-  margin-right: 1rem;
-  margin-top: 0.2rem;
-  font-size: 1.2rem;
-}
-
-.feature-text h5 {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #2c3e50;
-}
-
-.feature-text p {
-  color: #6c757d;
-  line-height: 1.6;
-}
-
-.cta-wrapper {
-  display: flex;
-  gap: 1rem;
-}
-
-.btn {
-  padding: 12px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  color: white;
-  border: none;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
-}
-
-.btn-outline {
-  background: transparent;
-  color: #007bff;
-  border: 2px solid #007bff;
-}
-
-.btn-outline:hover {
-  background: #007bff;
-  color: white;
-  transform: translateY(-3px);
-}
-
-@media (max-width: 768px) {
-  .cta-wrapper {
-    flex-direction: column;
-  }
-}
-</style>

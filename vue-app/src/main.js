@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import './style.css'
 
 const app = createApp(App)
 
@@ -19,3 +18,20 @@ app.config.warnHandler = (msg, instance, trace) => {
 }
 
 app.mount('#app')
+
+// Initialize AOS
+import AOS from 'aos'
+AOS.init()
+
+// Initialize Swiper
+import Swiper from 'swiper'
+import { Autoplay, Pagination } from 'swiper/modules'
+Swiper.use([Autoplay, Pagination])
+
+// Initialize GLightbox
+import GLightbox from 'glightbox'
+GLightbox()
+
+// Initialize PureCounter
+import PureCounter from '@srexi/purecounterjs'
+new PureCounter()
