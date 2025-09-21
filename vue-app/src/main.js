@@ -25,8 +25,8 @@ AOS.init()
 
 // Initialize Swiper
 import Swiper from 'swiper'
-import { Autoplay, Pagination } from 'swiper/modules'
-Swiper.use([Autoplay, Pagination])
+import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules'
+Swiper.use([Autoplay, Pagination, Navigation, EffectFade])
 
 // Initialize GLightbox
 import GLightbox from 'glightbox'
