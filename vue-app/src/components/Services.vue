@@ -1,8 +1,8 @@
 <template>
   <section id="services" class="services section animate-child">
     <div class="container section-title" data-aos="fade-up">
-      <h2>Services</h2>
-      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      <h2>Key Products and Services</h2>
+      <p>Comprehensive administrative and digital transformation solutions tailored for African organizations</p>
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -49,35 +49,35 @@ export default {
     return {
       services: [
         {
-          icon: 'bi bi-palette',
-          title: 'Brand Identity Design',
-          description: 'Donec vel sapien augue integer urna vel turpis cursus porta aliquam ligula eget ultricies.',
+          icon: 'bi bi-folder',
+          title: 'Records & Document Management',
+          description: 'Digital and physical records management, correspondence tracking, filing, scanning, and indexing services.',
           badge: 'Most Popular'
         },
         {
-          icon: 'bi bi-layout-text-window-reverse',
-          title: 'UI/UX Design',
-          description: 'Mauris blandit aliquet elit eget tincidunt nibh pulvinar rutrum tellus pellentesque eu.'
+          icon: 'bi bi-gear',
+          title: 'Administrative Workflow Support',
+          description: 'Administrative workflow redesign, secretariat services, minute-taking, and comprehensive office administrative support.'
         },
         {
           icon: 'bi bi-code-slash',
-          title: 'Web Development',
-          description: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.'
+          title: 'Software Development',
+          description: 'Custom HR, CRM, payroll, and accounting software development, plus mobile app development for field operations.'
         },
         {
-          icon: 'bi bi-phone',
-          title: 'Mobile App Design',
-          description: 'Nulla facilisi morbi tempus iaculis urna id volutpat lacus laoreet non curabitur gravida.'
+          icon: 'bi bi-pc-display',
+          title: 'IT Consultancy & Facilities',
+          description: 'Virtual CIO services, systems audits, IT policy development, infrastructure setup, LANs, servers, and endpoint security.'
         },
         {
-          icon: 'bi bi-megaphone',
-          title: 'Digital Marketing',
-          description: 'Sed porttitor lectus nibh donec sollicitudin molestie malesuada proin eget tortor risus.'
+          icon: 'bi bi-cloud',
+          title: 'Data Processing & Hosting',
+          description: 'Document digitization, secure cloud-based archiving, database services, and business continuity solutions.'
         },
         {
-          icon: 'bi bi-search',
-          title: 'SEO Optimization',
-          description: 'Curabitur arcu erat accumsan id imperdiet et porttitor at sem pellentesque habitant morbi.'
+          icon: 'bi bi-lightbulb',
+          title: 'Information Advisory Services',
+          description: 'Compliance audits, knowledge base setup, training, and research support for project implementation.'
         }
       ]
     }

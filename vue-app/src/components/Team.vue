@@ -1,16 +1,16 @@
 <template>
   <section id="team" class="team section animate-child">
     <div class="container section-title" data-aos="fade-up">
-      <h2>Team</h2>
-      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      <h2>Meet Our Team</h2>
+      <p>Founded in Zambia, Kabert Records Hub Limited offers a unique service model that combines traditional administrative support with advanced digital technology.</p>
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
       <div class="row gy-5 align-items-center">
         <div class="col-lg-6">
           <div class="team-intro">
-            <h3>Meet Our Exceptional Team</h3>
-            <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+            <h3>Leadership & Expertise</h3>
+            <p>Our commitment to service excellence, confidentiality, and innovation sets us apart in a rapidly evolving information economy. Our team brings together deep expertise in both traditional administrative services and cutting-edge digital solutions.</p>
             <div class="stats-row">
               <div class="stat-item">
                 <span class="stat-number">{{ teamStats.members }}</span>

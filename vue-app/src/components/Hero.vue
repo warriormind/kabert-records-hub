@@ -4,11 +4,11 @@
       <div class="row align-items-center">
         <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
           <div class="hero-content">
-            <h1>Transform Your Digital Presence</h1>
-            <p>We create innovative digital solutions that drive growth and elevate your brand. From web development to digital marketing, we're your partners in digital transformation.</p>
+            <h1>Empowering Organizations Through Digital Transformation</h1>
+            <p>Kabert Records Hub Limited combines traditional administrative excellence with cutting-edge digital technology. We provide smart, scalable, and secure solutions for record management, software development, IT consulting, and process automation across Africa.</p>
             <div class="hero-buttons">
-              <a href="#about" class="btn btn-primary" @click="scrollToSection('about')">Get Started</a>
-              <a href="#portfolio" class="btn btn-outline" @click="scrollToSection('portfolio')">Our Work</a>
+              <a href="#services" class="btn btn-primary" @click="scrollToSection('services')">Explore Services</a>
+              <a href="#contact" class="btn btn-outline" @click="scrollToSection('contact')">Get in Touch</a>
             </div>
             <div class="hero-stats">
               <div class="stat-item">

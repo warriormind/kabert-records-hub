@@ -190,7 +190,7 @@
                 <div class="card-content">
                   <h5>Email Us</h5>
                   <p>kabertrecordshub@gmail.com</p>
-                  <span class="response-time">Response in 2-4 hours</span>
+                  <span class="response-time">Response within 24 hours</span>
                 </div>
               </div>
 
@@ -200,8 +200,8 @@
                 </div>
                 <div class="card-content">
                   <h5>Call Us</h5>
-                  <p>+1 (555) 987-6543</p>
-                  <span class="response-time">Available 9AM - 6PM EST</span>
+                  <p>+260-967-939-395</p>
+                  <span class="response-time">Available 9AM - 6PM CAT</span>
                 </div>
               </div>
 

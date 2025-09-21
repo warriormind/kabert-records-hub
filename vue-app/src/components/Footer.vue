@@ -9,7 +9,7 @@
           <div class="footer-contact pt-3">
             <p>Kabert Records Hub Limited</p>
             <p>Lusaka, Zambia</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+260 211 123456</span></p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+260-967-939-395</span></p>
             <p><strong>Email:</strong> <span>kabertrecordshub@gmail.com</span></p>
           </div>
           <div class="social-links d-flex mt-4">
@@ -34,11 +34,11 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#services" @click="scrollToSection('services')">Records Management</a></li>
+            <li><a href="#services" @click="scrollToSection('services')">Software Development</a></li>
+            <li><a href="#services" @click="scrollToSection('services')">IT Consultancy</a></li>
+            <li><a href="#services" @click="scrollToSection('services')">Data Processing</a></li>
+            <li><a href="#services" @click="scrollToSection('services')">Administrative Support</a></li>
           </ul>
         </div>
 
