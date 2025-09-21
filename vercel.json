@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "forms/contact.php",
-      "use": "@vercel/php"
+  "functions": {
+    "forms/contact.php": {
+      "runtime": "vercel-php@0.7.2"
     }
-  ],
+  },
   "routes": [
     {
       "src": "/(.*)",
